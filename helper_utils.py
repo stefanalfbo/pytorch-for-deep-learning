@@ -21,19 +21,32 @@ def plot_results(model, distances, times):
 
     # Create a new figure for the plot
     plt.figure(figsize=(8, 6))
-    
+
     # Plot the actual data points
-    plt.plot(distances.numpy(), times.numpy(), color='orange', marker='o', linestyle='None', label='Actual Delivery Times')
-    
+    plt.plot(
+        distances.numpy(),
+        times.numpy(),
+        color="orange",
+        marker="o",
+        linestyle="None",
+        label="Actual Delivery Times",
+    )
+
     # Plot the predicted line from the model
-    plt.plot(distances.numpy(), predicted_times.numpy(), color='green', marker='None', label='Predicted Line')
-    
+    plt.plot(
+        distances.numpy(),
+        predicted_times.numpy(),
+        color="green",
+        marker="None",
+        label="Predicted Line",
+    )
+
     # Set the title of the plot
-    plt.title('Actual vs. Predicted Delivery Times')
+    plt.title("Actual vs. Predicted Delivery Times")
     # Set the x-axis label
-    plt.xlabel('Distance (miles)')
+    plt.xlabel("Distance (miles)")
     # Set the y-axis label
-    plt.ylabel('Time (minutes)')
+    plt.ylabel("Time (minutes)")
     # Display the legend
     plt.legend()
     # Add a grid to the plot
@@ -53,7 +66,7 @@ def plot_nonlinear_comparison(model, new_distances, new_times):
     """
     # Set the model to evaluation mode
     model.eval()
-    
+
     # Disable gradient computation for inference
     with torch.no_grad():
         # Generate predictions using the model
@@ -61,19 +74,32 @@ def plot_nonlinear_comparison(model, new_distances, new_times):
 
     # Create a new figure for the plot
     plt.figure(figsize=(8, 6))
-    
+
     # Plot the actual data points
-    plt.plot(new_distances.numpy(), new_times.numpy(), color='orange', marker='o', linestyle='None', label='Actual Data (Bikes & Cars)')
-    
+    plt.plot(
+        new_distances.numpy(),
+        new_times.numpy(),
+        color="orange",
+        marker="o",
+        linestyle="None",
+        label="Actual Data (Bikes & Cars)",
+    )
+
     # Plot the predictions from the model
-    plt.plot(new_distances.numpy(), predictions.numpy(), color='green', marker='None', label='Linear Model Predictions')
-    
+    plt.plot(
+        new_distances.numpy(),
+        predictions.numpy(),
+        color="green",
+        marker="None",
+        label="Linear Model Predictions",
+    )
+
     # Set the title of the plot
-    plt.title('Linear Model vs. Non-Linear Reality')
+    plt.title("Linear Model vs. Non-Linear Reality")
     # Set the label for the x-axis
-    plt.xlabel('Distance (miles)')
+    plt.xlabel("Distance (miles)")
     # Set the label for the y-axis
-    plt.ylabel('Time (minutes)')
+    plt.ylabel("Time (minutes)")
     # Add a legend to the plot
     plt.legend()
     # Add a grid to the plot for better readability

@@ -15,3 +15,10 @@ Whether you’re strengthening your career in machine learning, expanding into a
 ```bash
 uv run python ./simple_neural_network.py
 ```
+
+### Use ruff
+
+```bash
+uv run ruff check
+uv run ruff format
+```
