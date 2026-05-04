@@ -9,3 +9,9 @@ Building practical deep learning systems means going beyond theory. The **PyTorc
 In this 3-course professional certificate, you’ll learn through hands-on projects that mirror the challenges faced by deep learning engineers: designing efficient architectures, applying transfer learning and fine-tuning to pretrained models, using interpretability techniques to understand model behavior, and preparing optimized, portable models with ONNX and experiment tracking tools like MLflow. Along the way, you’ll **gain experience with techniques used across modern AI applications, including pruning and quantization**.
 
 Whether you’re strengthening your career in machine learning, expanding into applied AI, or building your own projects, this certificate gives you the skills and the confidence to turn ideas into working PyTorch models.
+
+## How to run the code
+
+```bash
+uv run python ./simple_neural_network.py
+```

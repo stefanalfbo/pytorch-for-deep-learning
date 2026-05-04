@@ -5,5 +5,6 @@ description = "Course materials for the DeepLearning.AI PyTorch for Deep Learnin
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "matplotlib>=3.10.9",
     "torch>=2.11.0",
 ]
