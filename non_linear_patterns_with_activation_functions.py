@@ -139,6 +139,8 @@ optimizer = optim.SGD(model.parameters(), lr=0.01)
 # with your screen.
 
 # Training loop
+fig, ax = None, None
+
 for epoch in range(3000):
     # Reset the optimizer's gradients
     optimizer.zero_grad()
@@ -150,8 +152,6 @@ for epoch in range(3000):
     loss.backward()
     # Update the model's parameters
     optimizer.step()
-
-    fig, ax = None, None
 
     # Create a live plot every 50 epochs
     if (epoch + 1) % 50 == 0:
