@@ -14,6 +14,7 @@ Whether you’re strengthening your career in machine learning, expanding into a
 
 ```bash
 uv run python ./simple_neural_network.py
+uv run python ./non_linear_patterns_with_activation_functions.py
 ```
 
 ### Use ruff
