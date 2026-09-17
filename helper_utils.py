@@ -1,6 +1,7 @@
 import torch
 import matplotlib.pyplot as plt
 
+
 def plot_results(model, distances, times):
     """
     Plots the actual data points and the model's predicted line for a given dataset.
@@ -120,16 +121,23 @@ def plot_data(distances, times, normalize=False):
     plt.figure(figsize=(8, 6))
 
     # Plot the data points as a scatter plot
-    plt.plot(distances.numpy(), times.numpy(), color='orange', marker='o', linestyle='none', label='Actual Delivery Times')
+    plt.plot(
+        distances.numpy(),
+        times.numpy(),
+        color="orange",
+        marker="o",
+        linestyle="none",
+        label="Actual Delivery Times",
+    )
 
     # Check if the data is normalized to set appropriate labels and title
     if normalize:
         # Set the plot title for normalized data
-        plt.title('Normalized Delivery Data (Bikes & Cars)')
+        plt.title("Normalized Delivery Data (Bikes & Cars)")
         # Set the x-axis label for normalized data
-        plt.xlabel('Normalized Distance')
+        plt.xlabel("Normalized Distance")
         # Set the y-axis label for normalized data
-        plt.ylabel('Normalized Time')
+        plt.ylabel("Normalized Time")
         # Display the legend
         plt.legend()
         # Add a grid to the plot
@@ -140,11 +148,11 @@ def plot_data(distances, times, normalize=False):
     # Handle the case for un-normalized data
     else:
         # Set the plot title for un-normalized data
-        plt.title('Delivery Data (Bikes & Cars)')
+        plt.title("Delivery Data (Bikes & Cars)")
         # Set the x-axis label for un-normalized data
-        plt.xlabel('Distance (miles)')
+        plt.xlabel("Distance (miles)")
         # Set the y-axis label for un-normalized data
-        plt.ylabel('Time (minutes)')
+        plt.ylabel("Time (minutes)")
         # Display the legend
         plt.legend()
         # Add a grid to the plot
@@ -181,17 +189,29 @@ def plot_final_fit(model, distances, times, distances_norm, times_std, times_mea
     plt.figure(figsize=(8, 6))
 
     # Plot the original data points
-    plt.plot(distances.numpy(), times.numpy(), color='orange', marker='o', linestyle='none', label='Actual Data (Bikes & Cars)')
+    plt.plot(
+        distances.numpy(),
+        times.numpy(),
+        color="orange",
+        marker="o",
+        linestyle="none",
+        label="Actual Data (Bikes & Cars)",
+    )
 
     # Plot the de-normalized predictions from the model
-    plt.plot(distances.numpy(), predicted_times.numpy(), color='green', label='Non-Linear Model Predictions')
+    plt.plot(
+        distances.numpy(),
+        predicted_times.numpy(),
+        color="green",
+        label="Non-Linear Model Predictions",
+    )
 
     # Set the title of the plot
-    plt.title('Non-Linear Model Fit vs. Actual Data')
+    plt.title("Non-Linear Model Fit vs. Actual Data")
     # Set the x-axis label
-    plt.xlabel('Distance (miles)')
+    plt.xlabel("Distance (miles)")
     # Set the y-axis label
-    plt.ylabel('Time (minutes)')
+    plt.ylabel("Time (minutes)")
     # Add a legend to the plot
     plt.legend()
     # Enable the grid
@@ -199,8 +219,10 @@ def plot_final_fit(model, distances, times, distances_norm, times_std, times_mea
     # Display the plot
     plt.show()
 
-    
-def plot_training_progress(epoch, loss, model, distances_norm, times_norm, fig=None, ax=None):
+
+def plot_training_progress(
+    epoch, loss, model, distances_norm, times_norm, fig=None, ax=None
+):
     """
     Plots the training progress of a model on normalized data,
     showing the current fit at each epoch.
