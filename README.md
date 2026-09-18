@@ -10,12 +10,59 @@ In this 3-course professional certificate, you’ll learn through hands-on proje
 
 Whether you’re strengthening your career in machine learning, expanding into applied AI, or building your own projects, this certificate gives you the skills and the confidence to turn ideas into working PyTorch models.
 
+## Project structure
+
+```text
+src/
+└── pytorch_for_deep_learning/
+    ├── __init__.py
+    ├── __main__.py
+    ├── neural_network_basics/
+    │   ├── __init__.py
+    │   ├── activation_functions.py
+    │   ├── neuron.py
+    │   ├── simple_neural_network.py
+    │   └── non_linear_patterns_with_activation_functions.py
+    └── utils/
+        ├── __init__.py
+        └── helper_utils.py
+tests/
+└── test_examples.py
+```
+
+The `neural_network_basics` package groups the introductory lessons. Shared
+plotting helpers live in `utils`. Each example has a `main()` function so that
+importing it does not start training or open plots.
+
 ## How to run the code
 
+Run these commands from the repository root. `uv run` installs the local package
+and its dependencies automatically, including the commands defined in
+`pyproject.toml`.
+
 ```bash
-uv run python ./neuron.py
-uv run python ./simple_neural_network.py
-uv run python ./non_linear_patterns_with_activation_functions.py
+uv run activation-functions
+uv run neuron
+uv run simple-neural-network
+uv run non-linear-patterns
+```
+
+The old root-level script paths have moved. You can also use Python's module
+syntax from the root, for example:
+
+```bash
+uv run python -m pytorch_for_deep_learning.neural_network_basics.neuron
+```
+
+The two network labs display Matplotlib plots; close each plot window to continue.
+
+### Run tests
+
+The tests use Python's built-in `unittest` runner and a non-interactive plotting
+backend, so no plot windows open during testing.
+
+```bash
+uv run python -m unittest discover -s tests -v
 ```
 
 ### Use ruff

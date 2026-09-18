@@ -9,7 +9,17 @@ dependencies = [
     "torch>=2.11.0",
 ]
 
+[project.scripts]
+activation-functions = "pytorch_for_deep_learning.neural_network_basics.activation_functions:main"
+neuron = "pytorch_for_deep_learning.neural_network_basics.neuron:main"
+simple-neural-network = "pytorch_for_deep_learning.neural_network_basics.simple_neural_network:main"
+non-linear-patterns = "pytorch_for_deep_learning.neural_network_basics.non_linear_patterns_with_activation_functions:main"
+
 [dependency-groups]
 dev = [
     "ruff>=0.15.12",
 ]
+
+[build-system]
+requires = ["uv_build>=0.10.8,<0.11.0"]
+build-backend = "uv_build"

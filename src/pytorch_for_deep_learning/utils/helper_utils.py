@@ -1,3 +1,5 @@
+"""Shared plotting helpers for the neural network examples."""
+
 import torch
 import matplotlib.pyplot as plt
 
